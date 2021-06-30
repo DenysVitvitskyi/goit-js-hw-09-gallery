@@ -5,4 +5,4 @@ const e=[{preview:"https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/app");
 },{"./sass/main.scss":"clu1","./js/app":"QdeU"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-09-gallery/src.50b77290.js.map
+//# sourceMappingURL=/goit-js-hw-09-gallery/src.0f559fdd.js.map
