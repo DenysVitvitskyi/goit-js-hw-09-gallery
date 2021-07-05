@@ -64,29 +64,37 @@ const galleryItems = [
     },
   ];
 
-  const gallery = document.querySelector(".js-gallery")
-  const modal = document.querySelector(".js-lightbox")
-  const img = document.querySelector(".lightbox__image")
-  const btn = document.querySelector('[data-action="close-lightbox"]')
+  const gallery = document.querySelector(".js-gallery");
+  const modal = document.querySelector(".js-lightbox");
+  const img = document.querySelector(".lightbox__image");
+  const btn = document.querySelector('[data-action="close-lightbox"]');
   
   const items = []
   
   galleryItems.forEach(item => {
-  const prev = item.preview
-  const origin = item.original
-  const descr = item.description
+  const prev = item.preview;
+  const origin = item.original;
+  const descr = item.description;
+  // const index = item.index;
   
-    item = `
+  
+  item = `
   <li class="gallery__item">
   <a href="#" class="gallery__link">
-  <img src="${prev}" data-source="${origin}" class="gallery__image" alt="${descr}"></a>
+  <img src="${prev}" 
+  data-source="${origin}" 
+  class="gallery__image" 
+  alt="${descr}"
+  data-index="index"
+  >
+  </a>
   </li>`
-    
-    items.push(item)
-  });
+  
+  items.push(item)
+});
 
-  
-  
+
+  currentIndex = Number(img.dataset.index);
   gallery.insertAdjacentHTML('afterbegin', items.join(" "))
   gallery.addEventListener("click", onImgClick);
   btn.addEventListener("click", onCloseModal)
