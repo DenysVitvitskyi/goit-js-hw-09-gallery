@@ -71,11 +71,10 @@ const galleryItems = [
   
   const items = []
   
-  galleryItems.forEach(item => {
+  galleryItems.forEach((item, index) => {
   const prev = item.preview;
   const origin = item.original;
   const descr = item.description;
-  // const index = item.index;
   
   
   item = `
@@ -83,18 +82,20 @@ const galleryItems = [
   <a href="#" class="gallery__link">
   <img src="${prev}" 
   data-source="${origin}" 
+  data-index="${index}"
   class="gallery__image" 
   alt="${descr}"
-  data-index="index"
   >
   </a>
   </li>`
+
   
   items.push(item)
 });
 
 
-  currentIndex = Number(img.dataset.index);
+  
+  const currentIndex = Number(img.dataset.index);
   gallery.insertAdjacentHTML('afterbegin', items.join(" "))
   gallery.addEventListener("click", onImgClick);
   btn.addEventListener("click", onCloseModal)
